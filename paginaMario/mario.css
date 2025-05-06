@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(rgb(49, 182, 243) ,white);
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../imgs/papel.jpg);
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza a imagem */
+    overflow: hidden; /* Impede que a imagem saia da tela */
+
+}
+.game-board{
+    border: 3px solid black;
+    margin-left: 10%;
+    margin-top: 130px;
+   width: 80%;
+   height: 700px;
+   position: relative;
+   overflow: hidden;
+   border-bottom:rgb(11, 173, 11) 15px solid;
+   box-shadow:  0 3px 0 0 black ;
+   background: linear-gradient(rgb(49, 182, 243) ,white);
+}
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+.clouds{
+    position: absolute;
+    width:550px;
+    position: absolute;
+    animation: clouds-run 20s linear infinite;
+   
+}
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+.mario{
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 150px;
+}
+@keyframes mario-jump{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+
+        bottom: 180px;
+    }
+    60%{
+        bottom: 180px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+.mario-jump{
+    animation: mario-jump 500ms ease-out;
+}
+
+@keyframes clouds-run{
+    from{
+    
+        right: -550px;;
+    }
+    to{
+        right: 100%;}
+    }
+    
+
+
+
