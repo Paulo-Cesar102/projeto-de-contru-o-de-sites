@@ -12,10 +12,12 @@ const marioJump = (event) => {
 const loop = setInterval(() => {
     let marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
     let pipePosition = pipe.offsetLeft;
+    const marioWidth = mario.offsetWidth; // Obtém a largura real do Mario
+    const pipeWidth = pipe.offsetWidth;   // Obtém a largura real do Pipe
     console.log('loop');
 
-    //game over
-    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+    //game over e Detecção de colisão com base nas dimensões reais dos elementos
+    if (pipePosition <= marioWidth && pipePosition > 0 && marioPosition < 80) {
 
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
@@ -34,4 +36,6 @@ const loop = setInterval(() => {
 
 }, 10);
 document.addEventListener('keydown', marioJump);
+document.addEventListener('click', marioJump); //mario jump on click
+
 
