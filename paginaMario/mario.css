@@ -91,3 +91,19 @@ body{
 
 
 
+@media (max-width: 768px) {
+    .game-board{
+        width: 100%;
+        height: 400px;
+    }
+    .mario{
+        width: 80px;
+        height: 80px;
+    }
+    .pipe{
+        width: 40px;
+    }
+    .clouds{
+        width: 300px;
+    }
+}
