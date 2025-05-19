@@ -1,6 +1,6 @@
 //area do canvas
 const canvas=document.querySelector('.canvas');
-const cxt= canvas.getContext('2d');
+const ctx= canvas.getContext('2d');
 //cobrinha
 const size=30;
 const cobra = 
@@ -8,7 +8,7 @@ const cobra =
     {x:230, y:200},             
 ];
 
-let direcao= ""; //direção inicial da cobrinha
+let direcao=''; //direção inicial da cobrinha
 
 //função para desenhar a cobrinha
 const desenhocobra = () =>{
@@ -37,11 +37,11 @@ cobra.push({x: cabeca.x + size , y:cabeca.y});
        }
 
        if(direcao == "down"){
-        cobra.push({x: cabeca.x , size , y:cabeca.y + size});
+        cobra.push({x: cabeca.x , y:cabeca.y + size});
            }
 
            if(direcao == "up"){
-            cobra.push({x: cabeca.x , size , y:cabeca.y - size});
+            cobra.push({x: cabeca.x , y:cabeca.y - size});
                }
     
 
@@ -49,14 +49,14 @@ cobra.push({x: cabeca.x + size , y:cabeca.y});
 }
  
 const gameloop= () =>{
-
+  ctx.clearRect(0,0, 600, 600); //limpa o canvas
+   moveCobra()
+    desenhocobra()
+    setTimeout(() =>{
+gameloop();
+    },300);
 }
 
-setInterval(() => {
-    ctx.clearRect(0,0, 600, 600); //limpa o canvas
-    moveCobra()
-    desenhocobra()
-},300) //atualiza a cada 300ms
 
 
 
