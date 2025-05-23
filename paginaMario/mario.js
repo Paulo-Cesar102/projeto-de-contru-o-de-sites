@@ -1,10 +1,12 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const music = document.getElementById('musica');
+const controleBtn = document.getElementById('controle');
 
 //mario jump
 const marioJump = (event) => {
     mario.classList.add('mario-jump');
-    setTimeout(() => {
+    setTimeout(() => {  
         mario.classList.remove('mario-jump');
     }, 500);
 }
@@ -33,9 +35,29 @@ const loop = setInterval(() => {
 
         clearInterval(loop);
     }
-
 }, 10);
+
 document.addEventListener('keydown', marioJump);
 document.addEventListener('click', marioJump); //mario jump on click
+
+
+  const startMusic = () => {
+  music.volume = 0.2;
+  if (music.paused) {
+    music.play().catch(e => console.warn('Autoplay bloqueado:', e));
+  }
+
+  // Remove os listeners para não tocar múltiplas vezes
+  document.removeEventListener('click', startMusic);
+  document.removeEventListener('keydown', startMusic);
+};
+document.addEventListener('click', startMusic);
+document.addEventListener('keydown', startMusic);
+
+// Botão de controle de som
+controleBtn.addEventListener('click', () => {
+  music.muted = !music.muted;
+  controleBtn.textContent = music.muted ? '🔇 Mudo' : '🔊 Som';
+});
 
 

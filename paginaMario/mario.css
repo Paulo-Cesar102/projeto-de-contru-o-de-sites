@@ -109,5 +109,16 @@ body{
             width: 300px;
         }
     }
-
+#controle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
 
