@@ -9,7 +9,7 @@ const cobra =
 ];
 
 let direcao=''; //direção inicial da cobrinha
-
+let id; //variável para armazenar o id do setTimeout
 //função para desenhar a cobrinha
 const desenhocobra = () =>{
 ctx.fillStyle='#98fb98'; //cor do corpo da cobrinha
@@ -52,11 +52,22 @@ const gameloop= () =>{
   ctx.clearRect(0,0, 600, 600); //limpa o canvas
    moveCobra()
     desenhocobra()
-    setTimeout(() =>{
-gameloop();
+  id= setTimeout(() =>{
+    gameloop();
     },300);
 }
+gameloop(); //inicia o jogo
 
+document.addEventListener('keydown',({key})=>{
+    if( key == 'ArrowRight' && direcao != 'left') {
+        direcao='right';
+    }
+     if( key == 'ArrowLeft'&& direcao != 'right'){
+        direcao='left';
+    }
+     if( key == 'ArrowUp'&& direcao != 'down'){
+        direcao='up';}
 
-
-
+         if( key == 'ArrowDown'&& direcao != 'up'){
+        direcao='down';}
+})
