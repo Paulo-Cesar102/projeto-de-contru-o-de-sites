@@ -107,10 +107,12 @@ const cabeca= cobra[cobra.length -1]; //pega a última posição da cobrinha
     if(cabeca.x== comida.x && cabeca.y == comida.y){ //verifica se a cobrinha comeu a comida
        cobra.push(cabeca); //adiciona a cabeça da cobrinha na última posição
          comida.x = randomPosition(); //gera uma nova posição aleatória para a comida
+            comida.y = randomPosition(); //gera uma nova posição aleatória para a comida
     }
  }
 
 const gameloop= () =>{
+    
   ctx.clearRect(0,0, 600, 600); //limpa o canvas
 
    desenharLinhas(); //desenha as linhas novamente
