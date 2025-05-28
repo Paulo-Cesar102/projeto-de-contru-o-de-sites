@@ -1,7 +1,11 @@
 //area do canvas
 const canvas=document.querySelector('.canvas');
 const ctx= canvas.getContext('2d');
-//cobrinha
+const score=document.querySelector('.scoreValor'); //pontuação
+const scoreFinal=document.querySelector('.scoreFinal>span');
+const menu=document.querySelector('.menu');
+const btnPlay=document.querySelector('.btn-play'); 
+const comeu= new Audio('./audios/audio.mp3'); //audio para quando a cobrinha come a comida
 const size=30;
 const cobra = 
 [   {x:270, y:270},
@@ -11,6 +15,9 @@ const cobra =
 let direcao=''; //direção inicial da cobrinha
 let id; //variável para armazenar o id do setTimeout
 //função para desenhar a cobrinha
+const adicionarScore=()=>{
+score.innerText=parseInt(score.innerText) + 10
+}
 const randomNumber= (min,max)=>{
     return Math.round(Math.random() *(max-min) + min);
 }
@@ -27,7 +34,7 @@ const colorRgb = ()=>{
 const comida={
     x:randomPosition(),
     y:randomPosition(),
-    color: colorRgb(), //cor aleatória da comida
+    color: colorRgb() //cor aleatória da comida
 }
 
 const desenharComida=()=>{
@@ -106,21 +113,49 @@ ctx.stroke();
 const cabeca= cobra[cobra.length -1]; //pega a última posição da cobrinha
     if(cabeca.x== comida.x && cabeca.y == comida.y){ //verifica se a cobrinha comeu a comida
        cobra.push(cabeca); //adiciona a cabeça da cobrinha na última posição
-         comida.x = randomPosition(); //gera uma nova posição aleatória para a comida
-            comida.y = randomPosition(); //gera uma nova posição aleatória para a comida
+        comeu.play(); //toca o áudio de comida
+         let x = randomPosition(); //gera uma nova posição aleatória para a comida
+            let y = randomPosition(); //gera uma nova posição aleatória para a comida
+            
+            while (cobra.find((position)=> position.x == x && position.y == y)) { //verifica se a nova posição da comida já está ocupada pela cobrinha
+                x = randomPosition(); //se estiver, gera uma nova posição aleatória
+                y = randomPosition(); //se estiver, gera uma nova posição aleatória
+            }
+            comida.x = x; //atualiza a posição da comida
+            comida.y = y; //atualiza a posição da comida
+            comida.color=colorRgb(); //atualiza a cor da comida
+            adicionarScore()
     }
  }
 
+ const colision=()=>{
+    const cabeca=cobra[cobra.length -1]; //pega a última posição da cobrinha
+    const parede= cabeca.x < 0 || cabeca.x >= canvas.width || cabeca.y <0 || cabeca.y >=canvas.height; //verifica se a cobrinha colidiu com as paredes
+   const neckIndex = cobra.length - 2; //índice da cabeça da cobrinha
+    const colisaoCobra = cobra.find((position,index)=>{
+ return index < neckIndex && position.x == cabeca.x && position.y == cabeca.y; //verifica se a cobrinha colidiu com ela mesma
+    }) //verifica se a cobrinha colidiu com ela mesma)
+    if(parede || colisaoCobra){ //se a cobrinha colidiu com as paredes ou com ela mesma
+        gamerOver(); //chama a função gamerOver
+    }
+ }
+
+ const gamerOver=()=>{
+    direcao=''; //para a cobrinha
+    menu.style.display='flex'; //mostra o menu
+   canvas.style.filter = "blur(5px)";//aplica um filtro de desfoque no canvas
+ }
 const gameloop= () =>{
     
   ctx.clearRect(0,0, 600, 600); //limpa o canvas
 
    desenharLinhas(); //desenha as linhas novamente
    desenharComida(); //chama a função para desenhar a comida
-   moveCobra()
+   moveCobra(); //move a cobrinha
     desenhocobra(); //chama a função para desenhar a cobrinha
     checkEat(); //verifica se a cobrinha comeu a comida
-
+    colision(); //verifica se a cobrinha colidiu com as paredes
+  
   id= setTimeout(() =>{
     gameloop();
     },300);

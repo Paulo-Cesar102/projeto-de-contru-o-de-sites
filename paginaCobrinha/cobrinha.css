@@ -17,5 +17,53 @@ body{
 }
 .canvas{
     background-color: #000;
+    position: relative;
+    z-index: 1;
+    transition: filter 0.3s ease;
    
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.scoreValor{
+    font-weight: 700;
+    font-size: 2.5rem;
+   display: block;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+.scoreFinal{
+font-weight: 500;
+    font-size: 1.5rem;
+ 
+}
+.menu{
+    text-transform: uppercase;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.gameover{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+}
+
+.btn-play{
+    border: none;
+ border-radius: 100px;
+ padding: 10px 15px 10px 12px;
+ font-size:1rem;
+ display: flex;
+align-items: center;
+justify-content: center;
+
 }
