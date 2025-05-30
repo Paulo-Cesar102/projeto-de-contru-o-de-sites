@@ -144,7 +144,7 @@ const cabeca= cobra[cobra.length -1]; //pega a última posição da cobrinha
     direcao=''; //para a cobrinha
     menu.style.display='flex'; //mostra o menu
    canvas.style.filter = "blur(5px)";//aplica um filtro de desfoque no canvas
-       scoreFinal.innerText=score.innerText; //atualiza a pontuação final
+       scoreFinal.innerText="Score: " + score.innerText; //atualiza a pontuação final
  }
 const gameloop= () =>{
     
