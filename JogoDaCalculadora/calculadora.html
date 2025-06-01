@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculadora.css">
+    <script src="calculadora.js" defer></script>
+</head>
+<body>
+<img id="explosao" src="https://media.tenor.com/2roX3uxz_68AAAAC/explosion.gif" alt="Explosão">
+    <div class="calculadora">
+        <audio id="somExplosao" src="https://www.soundjay.com/mechanical/sounds/explosion-01.mp3"></audio>
+    <h1>Calculadora</h1>
+    <div class="resultado" id="resultado"></div>
+    <div class="botoes">
+        <button class="btn"onclick="apagar()">C</button>
+        <button class="btn"onclick="voltar('<')">&lt;</button>
+        <button class="btn" onclick="insert('/')">/</button>
+        <button class="btn" onclick="insert('*')">x</button>
+
+        <button class="btn" onclick="insert('7')">7</button>
+        <button class="btn" onclick="insert('8')">8</button>
+        <button class="btn" onclick="insert('9')">9</button>
+        <button class="btn" onclick="insert('-')">-</button>
+
+        <button class="btn" onclick="insert('4')">4</button>
+        <button class="btn" onclick="insert('5')">5</button>
+        <button class="btn" onclick="insert('6')">6</button>
+        <button class="btn"onclick="insert('+')">+</button>  
+
+        <button class="btn" onclick="insert('1')">1</button>
+        <button class="btn"  onclick="insert('2')">2</button>
+        <button class="btn" onclick="insert('3')">3</button>
+        <button class="btn"onclick="calcular('=')">=</button>
+
+        <button class="btn zero" onclick="insert('0')">0</button>
+        <button class="btn"onclick="insert('.')">.</button>
+    </div>
+</div>
+
+</body>
+</html>
