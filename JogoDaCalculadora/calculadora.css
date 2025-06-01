@@ -1,85 +1,118 @@
+/* Remove margem e padding padrão de todos os elementos e ajusta box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estiliza o corpo da página */
 body {
-    background-image: linear-gradient(to right, #000000, #55093e);
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: linear-gradient(to right, #000000, #55093e); /* Degradê do preto pro roxo escuro */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte usada na página */
+    color: white; /* Cor padrão do texto */
+    height: 100vh; /* Altura total da tela */
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
+/* Estilo principal da calculadora */
 .calculadora {
-    background-color: #000000;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-    width: 320px;
-    padding: 20px;
+    background-color: #000000; /* Fundo preto */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* Sombra ao redor */
+    width: 320px; /* Largura fixa */
+    padding: 20px; /* Espaço interno */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Elementos em coluna */
+    align-items: center; /* Alinha ao centro */
 }
 
+/* Título da calculadora */
 h1 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espaço abaixo do título */
 }
 
+/* Tela onde aparece o resultado */
 .resultado {
-    width: 100%;
-    height: 60px;
-    background-color: white;
-    color: #e255c5;
-    font-size: 36px;
-    text-align: right;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    overflow: hidden;
+    width: 100%; /* Ocupa toda a largura */
+    height: 60px; /* Altura fixa */
+    background-color: white; /* Fundo branco */
+    color: #e255c5; /* Texto rosa */
+    font-size: 36px; /* Tamanho grande do número */
+    text-align: right; /* Alinha os números à direita */
+    padding: 10px; /* Espaço interno */
+    border-radius: 5px; /* Cantos arredondados */
+    margin-bottom: 15px; /* Espaço abaixo da tela */
+    overflow: hidden; /* Esconde texto que ultrapassar */
 }
 
+/* Grade de botões da calculadora */
 .botoes {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+    gap: 10px; /* Espaço entre os botões */
     width: 100%;
 }
 
+/* Estilo dos botões */
 .btn {
-    height: 60px;
-    background-color: rgba(95, 13, 95, 0.8);
-    color: white;
-    border: #0f0f0f solid 2px;
-    border-radius: 5px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    height: 60px; /* Altura padrão */
+    background-color: rgba(95, 13, 95, 0.8); /* Roxo escuro semi-transparente */
+    color: white; /* Cor do texto */
+    border: #0f0f0f solid 2px; /* Borda preta */
+    border-radius: 5px; /* Arredondamento */
+    font-size: 24px; /* Tamanho da fonte dos números */
+    cursor: pointer; /* Mostra mãozinha ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
 }
 
+/* Cor do botão quando o mouse está em cima */
 .btn:hover {
-    background-color: #7a0c5b;
+    background-color: #7a0c5b; /* Roxo mais claro */
 }
 
+/* Cor do botão enquanto está sendo clicado */
 .btn:active {
-    background-color: #55093e;
+    background-color: #55093e; /* Roxo escuro */
 }
 
-/* Botão zero ocupa duas colunas */
+/* Faz o botão "0" ocupar duas colunas */
 .btn.zero {
     grid-column: span 2;
 }
 
+/* GIF da explosão — começa invisível e ocupa toda a tela */
+#explosao {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
+/* Overlay do vídeo que cobre toda a tela */
+#video-overlay {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black; /* Fundo preto */
+    display: flex; /* Centraliza o vídeo */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica acima de tudo */
+}
 
-#explosao{
-    display:none;
-     position: absolute;
-     width: 100%;
-     height: 100%; 
-    
- 
+/* Calculadora escondida por padrão (até o vídeo acabar) */
+.calculadora {
+    display: none;
+}
+
+/* Estilo do vídeo */
+video {
+    max-width: 90%;
+    max-height: 90%;
+    border: 4px solid white; /* Borda branca ao redor do vídeo */
+    border-radius: 10px;
 }

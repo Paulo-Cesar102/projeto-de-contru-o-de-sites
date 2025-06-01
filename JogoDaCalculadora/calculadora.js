@@ -1,3 +1,13 @@
+const video = document.getElementById("introVideo");
+  const overlay = document.getElementById("video-overlay");
+  const calc = document.querySelector(".calculadora");
+
+  // Quando o vídeo terminar, remove a tela preta e exibe a calculadora
+  video.addEventListener("ended", () => {
+    overlay.style.display = "none";
+    calc.style.display = "block";
+  });
+
 let insert = (num) => {
     const resultado = document.getElementById('resultado');
     resultado.innerHTML += num;
