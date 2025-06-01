@@ -19,7 +19,7 @@ let calcular = () => {
     const som = document.getElementById('somExplosao');
 
     if (numero.includes('/0')) {
-        resultado.innerHTML = '💥 BOOM!';
+        resultado.innerHTML = '';
         resultado.classList.add('explodiu');
 
         // Mostra imagem
@@ -33,7 +33,7 @@ let calcular = () => {
             resultado.innerHTML = '';
             resultado.classList.remove('explodiu');
             explosaoImg.style.display = 'none';
-        }, 1500);
+        }, 2100);
     } else if (numero) {
         resultado.innerHTML = eval(numero);
     }
