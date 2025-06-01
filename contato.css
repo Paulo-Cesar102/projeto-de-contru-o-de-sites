@@ -1,0 +1,211 @@
+/* contato.css - Estilo exclusivo para a página de contatos */
+nav {
+  margin: 27px auto 0;
+
+  position: relative;
+  width: 100%;
+  max-width: 590px;
+  height: 50px;
+  background-color: #34495e;
+  border-radius: 8px;
+  font-size: 0;
+}
+nav a {
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all 0.5s ease 0s;
+  border-radius: 8px;
+}
+a:nth-child(1) {
+  width: 100px;
+}
+a:nth-child(2) {
+  width: 110px;
+}
+a:nth-child(3) {
+  width: 100px;
+}
+a:nth-child(4) {
+  width: 160px;
+}
+a:nth-child(5) {
+  width: 120px;
+}
+nav .start-home,
+a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+  background-color: #1abc9c;
+}
+nav .start-about,
+a:nth-child(2):hover ~ .animation {
+  width: 110px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+nav .start-blog,
+a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 210px;
+  background-color: #3498db;
+}
+nav .start-portefolio,
+a:nth-child(4):hover ~ .animation {
+  width: 160px;
+  left: 310px;
+  background-color: #9b59b6;
+}
+nav .start-contact,
+a:nth-child(5):hover ~ .animation {
+  width: 120px;
+  left: 470px;
+  background-color: #e67e22;
+}
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: #2c3e50;
+}
+
+
+h1 {
+  text-align: center;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: "Cherry Swash", cursive;
+}
+
+.sub {
+  position: relative;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 40px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: "Cherry Swash", cursive;
+  top: 500px;
+}
+
+/* estilo padrão para todos os parágrafos */
+p {
+  color: #ecf0f1;
+  font-family: "Cherry Swash", cursive;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* só o p do rodapé, se quiser ele fixo lá embaixo */
+footer p {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.contato-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2b3e50;
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .criador {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #354a5f;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .criador-texto {
+    flex: 1 1 60%;
+    padding-right: 20px;
+  }
+  
+  .criador-texto h2 a {
+    font-size: 24px;
+    color: #00ffd5;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+  
+  .criador-texto h2 a:hover {
+    text-decoration: underline;
+    color: #c80ea9;
+  }
+  
+  
+  .criador-texto p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  .criador-qrcode {
+    flex: 1 1 30%;
+    text-align: center;
+  }
+  
+  .criador-qrcode img {
+    max-width: 180px;
+    border-radius: 10px;
+    border: 2px solid #00ffd5;
+    box-shadow: 0 0 10px #00ffd5;
+  }
+  
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .criador {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .criador-texto {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .descricao-final {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1e2e3e;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  .descricao-final strong {
+    color: #00ffd5;
+  }
+  

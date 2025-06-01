@@ -1,0 +1,108 @@
+/* Estilo exclusivo da página SOBRE */
+body.sobre {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .sobre h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .sobre h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .sobre h3 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .sobre section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .sobre ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .sobre table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .sobre table, .sobre th, .sobre td {
+    border: 1px solid #ecf0f1;
+  }
+  
+  .sobre th, .sobre td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .sobre form {
+    margin-top: 30px;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sobre form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .sobre form input[type="text"],
+  .sobre form select,
+  .sobre form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .sobre form input[type="submit"] {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sobre form input[type="submit"]:hover {
+    background-color: #16a085;
+  }
+  
+  .sobre footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #bdc3c7;
+  }
+  
+  .sobre p {
+    position: static;
+    display: block;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+a {
+    color: #1abc9c;
+}  
+

@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Economica:400,700);
+
+body {
+  background: #c0392b;
+  font-family: 'Economica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para o botão do menu circular */
+.button {
+  font-size: 40px;
+  position: absolute;
+  z-index: 3; /* Fica sobre o círculo */
+  border: none;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  height: 50px;
+  right: 30px;
+  background-color: #fff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  width: 100px;
+  top: 20px;
+}
+
+/* Círculo onde os botões são posicionados */
+#circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 2; /* Está abaixo dos botões */
+  overflow: visible;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
