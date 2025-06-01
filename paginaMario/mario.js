@@ -36,7 +36,7 @@ let loop = setInterval(() => {
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
 
-        mario.src = 'paginaMario/imgs/game-over.png';
+        mario.src = 'imgs/game-over.png';
 
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
@@ -87,7 +87,7 @@ controleBtn.addEventListener('click', () => {
   menu.style.display = 'none';
 
   // Resetar Mario
-  mario.src = 'paginaMario/imgs/mario.gif'; // imagem original do Mario
+  mario.src = 'imgs/mario.gif'; // imagem original do Mario
   mario.style.width = '';        // remove largura customizada
   mario.style.marginLeft = '';   // remove marginLeft customizada
   mario.style.marginBottom = ''; // remove marginBottom customizada
@@ -123,7 +123,7 @@ controleBtn.addEventListener('click', () => {
       mario.style.animation = 'none';
       mario.style.bottom = `${marioPosition}px`;
 
-      mario.src = 'paginaMario/imgs/game-over.png';
+      mario.src = 'imgs/game-over.png';
       mario.style.width = '75px';
       mario.style.marginLeft = '50px';
       mario.style.marginBottom = '80px';
